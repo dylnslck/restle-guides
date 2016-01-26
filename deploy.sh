@@ -12,7 +12,7 @@ branch=$(git rev-parse --abbrev-ref HEAD)
 
 echo "Current branch is $branch"
 
-if [ $branch=="master" ]; then
+if [ $branch != "gh-pages" ]; then
   echo "Failed to swith to gh-pages"
   exit
 fi
