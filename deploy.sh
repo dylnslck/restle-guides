@@ -3,6 +3,9 @@ echo "Building"
 ./build.sh
 
 echo "Deploying"
+rm -rf bower_components
+rm -rf node_modules
+
 mkdir -p /tmp/restle-guides
 rm -rf /tmp/restle-guides
 cp -R ./guides/ /tmp/restle-guides
