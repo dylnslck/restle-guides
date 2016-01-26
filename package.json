@@ -1,0 +1,29 @@
+{
+  "name": "restle-guides",
+  "version": "0.0.1-alpha.1",
+  "description": "Restle guides hosted by GH pages.",
+  "main": "index.js",
+  "scripts": {
+    "start": "./start.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dylnslck/restle-guides.git"
+  },
+  "keywords": [
+    "restle",
+    "guides"
+  ],
+  "author": "Dylan Slack <dylanslack@gmail.com> (http://www.dylanslack.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dylnslck/restle-guides/issues"
+  },
+  "homepage": "https://github.com/dylnslck/restle-guides#readme",
+  "devDependencies": {
+    "clean-css": "^3.4.9",
+    "ejs": "^2.4.1",
+    "superstatic": "^4.0.1",
+    "uglify-js": "^2.6.1"
+  }
+}
