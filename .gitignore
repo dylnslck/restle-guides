@@ -35,3 +35,5 @@ node_modules
 bower_components
 guides/css/libs.css
 guides/js/libs.js
+dist
+.publish

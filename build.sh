@@ -1,13 +1,14 @@
 #!/usr/local/bin/bash
 
-mkdir -p ./js
-mkdir -p ./css
-mkdir -p ./guides/js
-mkdir -p ./guides/css
+sudo npm install
+bower install
 
-rm -rf ./guides/js/libs.js
-rm -rf ./guides/css/libs.js
-rm -rf ./guides/index.html
+rm -rf ./dist
+mkdir -p ./dist
+
+cp -R ./guides/css/ ./dist/css
+cp -R ./guides/js/ ./dist/js
+cp CNAME ./dist/CNAME
 
 declare -a javascripts
 javascripts[0]="bower_components/jquery/dist/jquery.js"
@@ -24,14 +25,14 @@ echo "Catting Javascript"
 
 for i in "${javascripts[@]}"; do
   echo "Catting $i -> ./js/libs.js"
-  cat $i >> ./guides/js/libs.js
+  cat $i >> ./dist/js/libs.js
 done
 
 echo "Catting CSS"
 
 for i in "${css[@]}"; do
   echo "Catting $i -> ./css/libs.css"
-  cat $i >> ./guides/css/libs.css
+  cat $i >> ./dist/css/libs.css
 done
 
 ./render.js

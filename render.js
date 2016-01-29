@@ -15,7 +15,7 @@ for (let file of files) {
   codes[name.split('.')[0]] = content;
 }
 
-const index = fs.readFileSync(`${__dirname}/index.ejs`, 'utf-8');
+const index = fs.readFileSync(`${__dirname}/guides/index.ejs`, 'utf-8');
 const html = ejs.render(index, { codes, version });
 
-fs.writeFileSync(`${__dirname}/guides/index.html`, html, 'utf-8');
+fs.writeFileSync(`${__dirname}/dist/index.html`, html, 'utf-8');
