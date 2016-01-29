@@ -8,6 +8,7 @@ mkdir -p ./dist
 
 cp -R ./guides/css/ ./dist/css
 cp -R ./guides/js/ ./dist/js
+cp ./guides/favicon.png ./dist
 cp CNAME ./dist/CNAME
 
 declare -a javascripts
