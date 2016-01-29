@@ -70,6 +70,20 @@
             app.before('user.create'), app.before('user.update'), app.before('user.find'), and app.before('user.findOne').
           </p>
         </section>
+
+        <section class="adapters p-t-1 p-x-3">
+          <h3>Adapters</h3>
+          <p>
+            Adapters talk to your database, format the data, and send that formatted data
+            back to Restle. Right now only <a href="https://github.com/dylnslck/restle-mongodb">MongoDB</a>
+            is supported, but more adapters are on the way. You can give Restle a universal adapter
+            such that all schemas are attached to a particular database. You can also override an adapter
+            for a particular schema. For example, you may store all your users in MongoDB but store
+            a different schema in-memory. This is particularly helpful when you want to use fixtures
+            and run lean by pre-populating some data.
+          </p>
+          <pre><code class="language-javascript"><%= codes.adapters %></code></pre>
+        </section>
       </div>
     </div>
 
