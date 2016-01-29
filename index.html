@@ -12,7 +12,7 @@
     <div class="container">
       <div class="row">
         <section class="intro p-t-3 p-x-3">
-          <h1>Restle Guides <span class="text-muted">v0.0.1-alpha.1</span></h1>
+          <h1>Restle Guides <span class="text-muted">v0.1.0</span></h1>
           <p>
             <a href="https://travis-ci.org/dylnslck/restle" target="_blank">
               <img src="https://travis-ci.org/dylnslck/restle.svg"/>
@@ -148,6 +148,34 @@ app.before(&#39;user.create&#39;, function(req, res, next) {
             After registering your schemas, Restle automatically generates events at your disposal. For example,
             app.before('user.create'), app.before('user.update'), app.before('user.find'), and app.before('user.findOne').
           </p>
+        </section>
+
+        <section class="adapters p-t-1 p-x-3">
+          <h3>Adapters</h3>
+          <p>
+            Adapters talk to your database, format the data, and send that formatted data
+            back to Restle. Right now only <a href="https://github.com/dylnslck/restle-mongodb">MongoDB</a>
+            is supported, but more adapters are on the way. You can give Restle a universal adapter
+            such that all schemas are attached to a particular database. You can also override an adapter
+            for a particular schema. For example, you may store all your users in MongoDB but store
+            a different schema in-memory. This is particularly helpful when you want to use fixtures
+            and run lean by pre-populating some data.
+          </p>
+          <pre><code class="language-javascript">const Restle = require(&#39;restle&#39;);
+const Adapter = require(&#39;restle-mongodb&#39;);
+
+const adapter = new Adatper({
+  url: &#39;mongodb://...&#39;,
+});
+
+const app = new Restle({
+  namespace: &#39;api&#39;,
+  port: 3000,
+  adapter: adapter,
+});
+
+app.on(&#39;ready&#39;, () =&gt; console.log(`Restle is listening at port ${app.port}`));
+</code></pre>
         </section>
       </div>
     </div>
