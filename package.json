@@ -1,6 +1,6 @@
 {
   "name": "restle-guides",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Restle guides hosted by GH pages.",
   "main": "index.js",
   "scripts": {
